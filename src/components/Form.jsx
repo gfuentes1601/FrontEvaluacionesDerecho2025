@@ -12,13 +12,16 @@ const Form = ({ title, fields, buttonText, onSubmit, onChange }) => {
       onChange(e);
     }
   };
-
   return (
-    <form className="form" onSubmit={handleSubmit(handleFormSubmit)}>
-      <h1 className="form-title">{title}</h1>
+    <form className="space-y-6 bg-white rounded-2xl shadow-2xl p-8 md:p-12 max-w-md w-full" onSubmit={handleSubmit(handleFormSubmit)}>
+      <h1 className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-8">
+        {title}
+      </h1>
       {fields.map((field, index) => (
-        <div key={index} className="form-field">
-          <label htmlFor={field.name}>{field.label}</label>
+        <div key={index} className="space-y-2">
+          <label htmlFor={field.name} className="block text-sm font-semibold text-gray-700">
+            {field.label}
+          </label>
           {field.fieldType === 'input' && (
             <input
               {...register(field.name, {
@@ -36,17 +39,21 @@ const Form = ({ title, fields, buttonText, onSubmit, onChange }) => {
               type={field.type}
               placeholder={field.placeholder}
               onChange={handleChange}
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all duration-300"
             />
           )}
           {errors[field.name] && (
-            <span className="error-message">{errors[field.name].message}</span>
+            <span className="text-red-500 text-sm font-medium">{errors[field.name].message}</span>
           )}
           {field.errorMessageData && (
-            <span className="error-message">{field.errorMessageData}</span>
+            <span className="text-red-500 text-sm font-medium">{field.errorMessageData}</span>
           )}
         </div>
       ))}
-      <button type="submit" className="submit-button">
+      <button 
+        type="submit" 
+        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300"
+      >
         {buttonText}
       </button>
     </form>

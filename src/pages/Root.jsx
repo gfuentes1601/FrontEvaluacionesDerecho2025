@@ -4,9 +4,7 @@ import { AuthProvider } from '@context/AuthContext';
 function Root() {
   return (
     <AuthProvider>
-      <main className="main-content">
-        <Outlet />
-      </main>
+      <Outlet />
     </AuthProvider>
   );
 }
