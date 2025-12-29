@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+/* import { useForm } from 'react-hook-form';
 
 const Form = ({ title, fields, buttonText, onSubmit, onChange }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -60,4 +60,45 @@ const Form = ({ title, fields, buttonText, onSubmit, onChange }) => {
   );
 };
 
+export default Form; */
+
+
+import { useForm } from 'react-hook-form';
+import '../styles/form.css';
+
+const Form = ({ title, fields, buttonText, onSubmit }) => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  return (
+    <div className="container">
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <h1 className="form-title">{title}</h1>
+
+        {fields.map((field, index) => (
+          <div key={index} className="form-field">
+            <label>{field.label}</label>
+
+            <input
+              type={field.type}
+              placeholder={field.placeholder}
+              {...register(field.name, { required: field.required })}
+            />
+
+            {errors[field.name] && (
+              <span className="error-message">
+                {field.label} es requerido
+              </span>
+            )}
+          </div>
+        ))}
+
+        <button className="submit-button">
+          {buttonText}
+        </button>
+      </form>
+    </div>
+  );
+};
+
 export default Form;
+

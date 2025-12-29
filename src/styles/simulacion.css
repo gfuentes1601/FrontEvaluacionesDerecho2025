@@ -1,0 +1,46 @@
+.simulacion-container {
+  max-width: 900px;
+  margin: 0 auto; /* esquina izquierda */
+}
+
+.simulacion-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;      /* tamaño grande */
+  font-weight: 700;       /* más gruesa */
+  color: #2d3748;         /* gris oscuro elegante */
+}
+
+.simulacion-container h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.simulacion-preguntas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finalizar-btn {
+  margin-top: 40px;
+  padding: 14px 30px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.finalizar-btn:hover {
+  background: #5568d3;
+}
+
+.finalizar-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

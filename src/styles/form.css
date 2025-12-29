@@ -27,9 +27,10 @@
 }
 
 .form-field label {
+  font-size: 20px;
   display: block;
   margin-bottom: 8px;
-  color: #555;
+  color: #000;
   font-weight: 500;
 }
 

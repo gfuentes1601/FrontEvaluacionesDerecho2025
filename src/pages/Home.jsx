@@ -1,4 +1,4 @@
-import { useState } from 'react';
+ /* import { useState } from 'react';
 
 const Home = () => {
   const [profileData, setProfileData] = useState(null);
@@ -12,9 +12,8 @@ const Home = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
           Página de Inicio
         </h1>
-        
-        <button 
-          onClick={handleGetProfile} 
+        <button
+          onClick={handleGetProfile}
           className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300"
         >
           Obtener Perfil
@@ -30,4 +29,53 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;  
+
+import { useNavigate } from 'react-router-dom'
+
+const Home = () => {
+  const navigate = useNavigate()
+
+  return (
+    <div className="home-container">
+      <h1>Simulación de Práctica</h1>
+
+      <button
+        className="profile-button"
+        onClick={() => navigate('/simulacion')}
+      >
+        Iniciar Simulación
+      </button>
+    </div>
+  )
+}
+
+export default Home ; */
+
+import { useNavigate } from 'react-router-dom';
+import '../styles/styles.css';
+
+const InicioSimulacion = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="home-container">
+      <h1>Simulación de Práctica</h1>
+
+      <p>
+        Esta simulación tiene tiempo limitado.
+        Puedes repetirla las veces que desees.
+      </p>
+
+      <button
+        className="profile-button"
+        onClick={() => navigate('/simulacion')}
+      >
+        Comenzar
+      </button>
+    </div>
+  );
+};
+
+export default InicioSimulacion;
+

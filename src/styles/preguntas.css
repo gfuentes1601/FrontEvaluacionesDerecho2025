@@ -1,0 +1,122 @@
+.preguntas-container {
+    padding: 20px;
+}
+
+.preguntas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.preguntas-table th,
+.preguntas-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.btn-agregar {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn-cancelar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.btn-eliminar {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-content input {
+    width: 100%;
+    /* ancho completo */
+    padding: 10px;
+    /* espacio interno */
+    margin-top: 5px;
+    /* espacio entre label e input */
+    margin-bottom: 15px;
+    /* espacio entre inputs */
+    border-radius: 5px;
+    /* bordes redondeados */
+    border: 1px solid #ccc;
+    /* borde gris */
+    font-size: 1rem;
+    /* tamaño de texto */
+    transition: 0.3s;
+    /* transición suave al foco */
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-editar {
+    background-color: #2196f3;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.modal-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+    /* permite ajustar altura */
+    min-height: 80px;
+}
+
+.modal-textarea:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+    outline: none;
+}
