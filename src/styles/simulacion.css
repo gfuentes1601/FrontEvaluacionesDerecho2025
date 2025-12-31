@@ -1,14 +1,14 @@
 .simulacion-container {
   max-width: 900px;
-  margin: 0 auto; /* esquina izquierda */
+  margin: 0 auto;
 }
 
 .simulacion-title {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 2.5rem;      /* tamaño grande */
-  font-weight: 700;       /* más gruesa */
-  color: #2d3748;         /* gris oscuro elegante */
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
 }
 
 .simulacion-container h1 {
