@@ -33,14 +33,14 @@ const Home = () => {
           onMouseEnter={() => setMenuOpen(true)}
           onMouseLeave={() => setMenuOpen(false)}
         >
-          {/* SOLO PROFESOR PUEDE CREAR PREGUNTAS */}
+          {/* SOLO PROFESOR PUEDE ADMINISTRAR PREGUNTAS */}
           {isProfesor && (
             <button
               className={`px-4 py-2 rounded text-white transition
                           ${menuOpen ? "bg-green-500 hover:bg-green-700" : "bg-green-500 hover:bg-green-700"}`}
               onClick={() => navigate("/preguntas")}
             >
-              {menuOpen ? "Crear Preguntas" : "CP"}
+              {menuOpen ? "Administrar Preguntas" : "AP"}
             </button>
           )}
 
@@ -76,7 +76,7 @@ const Home = () => {
               className="p-6 bg-green-100 rounded-lg shadow hover:shadow-lg cursor-pointer transition duration-300"
               onClick={() => navigate("/preguntas")}
             >
-              <h2 className="text-xl font-semibold mb-2">Crear Preguntas</h2>
+              <h2 className="text-xl font-semibold mb-2">Administrar Preguntas</h2>
               <p className="text-gray-700">
                 Agrega, edita y elimina tus preguntas de práctica.
               </p>

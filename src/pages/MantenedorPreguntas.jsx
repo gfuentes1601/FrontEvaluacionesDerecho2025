@@ -249,19 +249,21 @@ const MantenedorPreguntas = () => {
                 <td className="border px-4 py-2 max-w-xs break-words">{p.unidad?.nombre || 'Sin Unidad Asignada'}</td>
                 <td className="border px-4 py-2 max-w-xs break-words">{p.pregunta}</td>
                 <td className="border px-4 py-2 max-w-xs break-words">{p.respuesta}</td>
-                <td className="border px-4 py-2 flex gap-2 items-center">
-                  <button
-                    className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
-                    onClick={() => abrirModalEditar(p)}
-                  >
-                    Editar
-                  </button>
-                  <button
-                    className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
-                    onClick={() => setPreguntaAEliminar(p)}
-                  >
-                    Eliminar
-                  </button>
+                <td className="border px-4 py-2 max-w-xs">
+                  <div className="flex justify-center items-center">
+                    <button
+                      className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 mr-4"
+                      onClick={() => abrirModalEditar(p)}
+                    >
+                      Editar
+                    </button>
+                    <button
+                      className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+                      onClick={() => setPreguntaAEliminar(p)}
+                    >
+                      Eliminar
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
