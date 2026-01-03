@@ -72,21 +72,13 @@
 
 .modal-content input {
     width: 100%;
-    /* ancho completo */
     padding: 10px;
-    /* espacio interno */
     margin-top: 5px;
-    /* espacio entre label e input */
     margin-bottom: 15px;
-    /* espacio entre inputs */
     border-radius: 5px;
-    /* bordes redondeados */
     border: 1px solid #ccc;
-    /* borde gris */
     font-size: 1rem;
-    /* tamaño de texto */
     transition: 0.3s;
-    /* transición suave al foco */
 }
 
 .modal-buttons {
@@ -111,7 +103,6 @@
     border: 1px solid #ccc;
     font-size: 1rem;
     resize: vertical;
-    /* permite ajustar altura */
     min-height: 80px;
 }
 

@@ -1,7 +1,6 @@
 import axios from './root.service.js';
 
-
-// Obtener todas las preguntas
+// OBTENER TODAS LAS PREGUNTAS
 export const getAllPreguntas = async () => {
   try {
     const response = await axios.get("/preguntas");
@@ -12,7 +11,7 @@ export const getAllPreguntas = async () => {
   }
 };
 
-// Obtener pregunta por id
+// OBTENER PREGUNTAS POR ID
 export const getPreguntaById = async (id) => {
   try {
     const response = await axios.get(`${API_URL}/${id}`);
@@ -23,7 +22,18 @@ export const getPreguntaById = async (id) => {
   }
 };
 
-// Crear nueva pregunta
+// OBTENER PREGUNTAS POR UNIDAD
+export const getPreguntasPorUnidad = async (unidadId) => {
+  try {
+    const response = await axios.get(`/preguntas/unidad/${unidadId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error al obtener preguntas de la unidad ${unidadId}:`, error);
+    throw error;
+  }
+};
+
+// CREAR NUEVA PREGUNTA
 export const createPregunta = async (pregunta) => {
   try {
     const response = await axios.post("/preguntas", pregunta);
@@ -34,7 +44,7 @@ export const createPregunta = async (pregunta) => {
   }
 };
 
-// Actualizar pregunta
+// ACTUALIZAR PREGUNTA
 export const updatePregunta = async (id, pregunta) => {
   try {
     const response = await axios.put(`/preguntas/${id}`, pregunta);
@@ -45,7 +55,7 @@ export const updatePregunta = async (id, pregunta) => {
   }
 };
 
-// Eliminar pregunta
+// ELIMINAR PREGUNTA
 export const deletePregunta = async (id) => {
   try {
     const response = await axios.delete(`/preguntas/${id}`);

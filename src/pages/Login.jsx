@@ -1,11 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { login } from '../services/auth.service';
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('jwt-auth');
+
+    if (token) {
+      navigate('/home');
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +32,13 @@ const Login = () => {
     }
 
     // Llamar endpoint de login y navegar al home
-    console.log({ email, password });
+    try {
+      await login({ email, password });
+      navigate("/home");
+    } catch (error) {
+      console.error(error);
+      toast.error(error?.response?.data?.message || 'Ha ocurrido un error al intentar iniciar sesión.');
+    }
   };
 
   return (

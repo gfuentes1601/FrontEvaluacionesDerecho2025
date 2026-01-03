@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode';
-import cookies from 'js-cookie';
 
 const AuthContext = createContext();
 
@@ -8,8 +7,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const token = cookies.get('jwt-auth');
-    const storedUser = sessionStorage.getItem('usuario');
+    const token = localStorage.getItem('jwt-auth');
+    const storedUser = localStorage.getItem('usuario');
     
     if (token && storedUser) {
       try {
@@ -17,13 +16,13 @@ export const AuthProvider = ({ children }) => {
         if (decoded.exp * 1000 > Date.now()) {
           setUser(JSON.parse(storedUser));
         } else {
-          cookies.remove('jwt-auth');
-          sessionStorage.removeItem('usuario');
+          localStorage.remove('jwt-auth');
+          localStorage.removeItem('usuario');
         }
       } catch (error) {
         console.error('Error al decodificar token:', error);
-        cookies.remove('jwt-auth');
-        sessionStorage.removeItem('usuario');
+        localStorage.remove('jwt-auth');
+        localStorage.removeItem('usuario');
       }
     }
   }, []);

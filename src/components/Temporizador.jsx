@@ -4,7 +4,7 @@ const Temporizador = ({ tiempoInicial, onFinalizar }) => {
   const [segundos, setSegundos] = useState(tiempoInicial);
   const onFinalizarRef = useRef(onFinalizar);
 
-  // Mantener la referencia actualizada
+  // MANTENER REFERENCIA ACTUALIZADA
   useEffect(() => {
     onFinalizarRef.current = onFinalizar;
   }, [onFinalizar]);
@@ -14,8 +14,7 @@ const Temporizador = ({ tiempoInicial, onFinalizar }) => {
       setSegundos((prev) => {
         if (prev <= 1) {
           clearInterval(interval);
-          
-          // SOLUCIÓN: Ejecutar onFinalizar fuera del ciclo de renderizado actual
+
           setTimeout(() => {
             onFinalizarRef.current();
           }, 0);

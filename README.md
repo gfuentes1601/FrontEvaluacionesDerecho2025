@@ -63,7 +63,6 @@ src/
 
 - Sistema de autenticación con JWT
 - Rutas protegidas
-- Manejo de sesión con cookies
 - Alertas con SweetAlert2
 - Formularios validados
 
