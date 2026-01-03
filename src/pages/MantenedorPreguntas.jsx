@@ -76,6 +76,7 @@ const MantenedorPreguntas = () => {
         unidad_id: currentPregunta.unidad_id
       });
 
+      toast.success('Pregunta agregada exitosamente.');
       setCurrentPregunta({ id: null, pregunta: "", respuesta: "", unidad_id: null });
       setShowModal(false);
       fetchPreguntas();
@@ -98,6 +99,7 @@ const MantenedorPreguntas = () => {
         unidad_id: currentPregunta.unidad_id
       });
 
+      toast.success('Pregunta editada exitosamente.');
       setCurrentPregunta({ id: null, pregunta: "", respuesta: "", unidad_id: null });
       setShowModal(false);
       fetchPreguntas();
@@ -110,9 +112,11 @@ const MantenedorPreguntas = () => {
   const handleEliminar = async (id) => {
     try {
       await deletePregunta(id);
+      toast.success('Pregunta eliminada exitosamente.');
       fetchPreguntas();
     } catch (error) {
-      console.error("Error al eliminar pregunta:", error);
+      onsole.error(error?.response?.data?.message);
+      toast.error(error?.response?.data?.message || 'Ha ocurrido un error al intentar eliminar la pregunta.');
     }
   };
 
