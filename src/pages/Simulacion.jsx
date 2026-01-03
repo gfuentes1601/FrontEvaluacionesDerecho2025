@@ -25,7 +25,8 @@ const Simulacion = () => {
   const fetchUnidades = async () => {
     try {
       const data = await getAllUnidades();
-      const unidadesOrdenadas = [...data.data].sort((a, b) => a.id - b.id);
+      const unidadesOrdenadas = [...data.data].sort((a, b) => a.id - b.id)
+        .filter(unidad => unidad.cantidadPreguntas > 0);
       setUnidades(unidadesOrdenadas);
     } catch (error) {
       console.error("Error al cargar unidades:", error);
@@ -43,7 +44,7 @@ const Simulacion = () => {
     try {
       const data = await getPreguntasPorUnidad(unidadSeleccionada);
 
-      //  ORDENAR PREGUNTAS POR ID ASCENDENTE
+      // ORDENAR PREGUNTAS POR ID ASCENDENTE
       const preguntasOrdenadas = [...(data.data || data)].sort((a, b) => a.id - b.id);
 
       setPreguntas(preguntasOrdenadas);
